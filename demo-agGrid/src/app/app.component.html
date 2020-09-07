@@ -1,0 +1,36 @@
+<button (click)="getSelectedRows()">Get Selected Rows</button>
+<button (click)="toggleSalaryColView()">View/Hide Salary</button>
+<button (click)="toggleSSOColPin()">Pin/Unpin SSO</button>
+<button (click)="sortByName()">Sort By Name</button>
+<button (click)="toggleDragIconView()">View/Hide Drag Icon</button>
+
+<ag-grid-angular
+  #agGrid
+  style="width: 85%; height: 500px"
+  class="ag-theme-alpine"
+  [rowData]="rowData"
+  [columnDefs]="columnDefs"
+  [rowSelection]="rowSelection"
+  [statusBar]="statusBar"
+  [enableRangeSelection]="true"
+  [colResizeDefault]="colResizeDefault"
+  [animateRows]=animateRows
+  [rowDragManaged]=rowDragManaged
+  [enableMultiRowDragging] = enableMultiRowDragging
+  [rowClassRules]="rowClassRules"
+  (gridReady)="onGridReady($event)"
+  >
+</ag-grid-angular>
+
+<!--
+<ag-grid-angular
+  #agGrid
+  style="width: 1100px; height: 500px;"
+  class="ag-theme-alpine"
+  [autoGroupColumnDef]="autoGroupColumnDef"
+  [rowData]="rowData | async"
+  [columnDefs]="columnDefs"
+  rowSelection="multiple"
+  >
+</ag-grid-angular>
+-->
